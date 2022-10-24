@@ -100,7 +100,7 @@
                             </div>
                         @enderror
 
-                        {{-- Tombol simpan dan batal --}}
+                        {{-- Tombol simpan --}}
                         <div class="footer mt-2">
                             <button type="submit" class="btn btn-success">Simpan</button>
                         </div>
