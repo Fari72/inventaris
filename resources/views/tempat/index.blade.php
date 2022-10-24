@@ -11,7 +11,7 @@
 
     <div class="section-body">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-6">
+            <div class="col-12 col-md-7 col-lg-7">
                 <div class="card">
                     <div class="card-header">
                         <h4>Data Tempat</h4>

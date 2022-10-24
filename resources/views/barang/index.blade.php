@@ -11,7 +11,7 @@
 
     <div class="section-body">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-6">
+            <div class="col-12 col-md-7 col-lg-7">
                 <div class="card">
                     <div class="card-header">
                         <h4>Data Barang</h4>
@@ -27,6 +27,7 @@
                                     <td>Kategori</td>
                                     <td>Tempat</td>
                                     <td>Stok</td>
+                                    <td>Ket</td>
                                     <td>Aksi</td>
                                 </tr>
                             </thead>
@@ -90,6 +91,15 @@
                             </div>
                         @enderror
                         
+                        {{-- Add Ket --}}
+                        <label class="mt-2" for="nama">Ket Barang</label>
+                        <input type="text" name="ket" id="ket" value="{{ old('ket')}}" class="form-control @error('ket') is-invalid @enderror">
+                        @error('ket')
+                            <div class="text-danger">
+                                {{ $message }}
+                            </div>
+                        @enderror
+
                         {{-- Tombol simpan dan batal --}}
                         <div class="footer mt-2">
                             <button type="submit" class="btn btn-success">Simpan</button>

@@ -22,7 +22,7 @@ Dashboard
                         <h4>Barang</h4>
                     </div>
                     <div class="card-body">
-                        {{-- {{ $barang->count() }} --}}
+                        {{ $barang->count() }}
                     </div>
                 </div>
             </div>
