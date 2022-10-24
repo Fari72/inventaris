@@ -6,6 +6,7 @@ use App\Http\Controllers\
     AuthController,
     DashboardController,
     BarangController,
+    TempatController,
 };
 
 Route::get('/', function () {
@@ -19,3 +20,4 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('/barang', BarangController::class);
+Route::resource('/tempat', TempatController::class);
