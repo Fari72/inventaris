@@ -25,10 +25,10 @@
                                     <td>Kode</td>
                                     <td>Nama</td>
                                     <td>Kategori</td>
-                                    <td>Tempat</td>
+                                    <td style="width: 10%">Tempat</td>
                                     <td>Stok</td>
-                                    <td>Ket</td>
-                                    <td>Aksi</td>
+                                    <td style="width: 15%">Ket</td>
+                                    <td style="width: 15%">Aksi</td>
                                 </tr>
                             </thead>
                         </table>
@@ -37,7 +37,7 @@
             </div>
             
              {{-- Tambah Barang --}}
-             <div class="col-12 col-md-5 col-lg-5">
+             <div class="col-13 col-md-5 col-lg-5">
                 <div class="card">
                     {{-- Judul --}}
                     <div class="card-header">
@@ -79,7 +79,7 @@
                             <option value="Rak A" selected>Rak A</option>
                             <option value="Rak B">Rak B</option>
                             <option value="Rak C">Rak C</option>
-                            <option value="Rak C">Rak C</option>
+                            <option value="Rak D">Rak D</option>
                         </select>
 
                         {{-- Add Stok --}}
