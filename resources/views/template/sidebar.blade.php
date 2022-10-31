@@ -22,20 +22,27 @@
             <li class="menu-header">Master</li>
             
             <li class="{{ request()->is('barang') ? 'active' : '' }}">
-                <a class="nav-link" href="{{route ('barang.index') }}">
+                <a class="nav-link" href="{{ route('barang.index') }}">
                     <i class="fas fa-boxes"></i>
                     <span>Barang</span>
                 </a>
             </li>
 
             <li class="{{ request()->is('tempat') ? 'active' : '' }}">
-                <a class="nav-link" href="{{route ('tempat.index') }}">
+                <a class="nav-link" href="{{ route('tempat.index') }}">
                     <i class="fas fa-map-marker"></i>
                     <span>Tempat</span>
                 </a>
             </li>
 
-            <li class="menu-header">Setting User</li>
+            <li class="{{ request()->is('kategori') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('kategori.index') }}">
+                    <i class="fas fa-tags"></i>
+                    <span>Kategori</span>
+                </a>
+            </li>
+
+            <li class="menu-header">Setting</li>
 
             <li class="{{ request()->is('user') ? 'active' : '' }}">
                 <a class="nav-link" href="#">
@@ -53,7 +60,4 @@
         </ul>
     </aside>
 </div>
-
-
-
 </div>
