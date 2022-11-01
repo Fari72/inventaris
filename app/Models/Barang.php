@@ -12,4 +12,14 @@ class Barang extends Model
     protected $table = 'barang';
     
     protected $guarded = [];
+
+    public function Kategori()
+    {
+        return $this->belongsTo(Kategori::class);
+    }
+
+    public function Tempat()
+    {
+        return $this->belongsTo(Tempat::class);
+    }
 }

@@ -12,4 +12,9 @@ class Tempat extends Model
     protected $table = 'tempat';
     
     protected $guarded = [];
+
+    public function Barang()
+    {
+        return $this->hasMany(Barang::class);
+    }
 }

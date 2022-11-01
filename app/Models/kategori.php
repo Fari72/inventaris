@@ -12,4 +12,9 @@ class kategori extends Model
     protected $table = 'kategori';
     
     protected $guarded = [];
+
+    public function Barang()
+    {
+        return $this->hasMany(Barang::class);
+    }
 }
