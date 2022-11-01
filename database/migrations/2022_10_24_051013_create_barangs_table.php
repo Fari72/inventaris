@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('kode');
             $table->string('nama');
-            $table->integer('categori_id');
+            $table->integer('kategori_id');
             $table->integer('tempat_id');
             $table->integer('stok');
-            $table->text('ket');
+            $table->text('keterangan');
             $table->timestamps();
         });
     }

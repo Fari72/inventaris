@@ -11,10 +11,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css">
 
   <!-- CSS Libraries -->
+  {{-- DataTables --}}
+  <link rel="stylesheet" href="{{ asset('assets/datatable/dataTables.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/datatable/responsive.bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/datatable/buttons.bootstrap4.min.css') }}">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/components.css">
+
+  <!-- Template iziToast -->
+  <link rel="stylesheet" href="{{ asset('assets/izitoast/iziToast.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/izitoast/iziToast.min.js') }}">
+
 
   {{-- <!-- Start GA -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -38,7 +47,6 @@
         
         @include('template.sidebar')
         <div class="main-content">
-          <section class="section">
             @yield('content')
               {{-- <div class="section-header">
               <h1>Blank Page</h1>
@@ -46,7 +54,6 @@
   
             <div class="section-body">
           </div> --}}
-          </section>
           </div>
       <!-- Main Content -->
         @include('template.footer')
@@ -63,11 +70,18 @@
   <script src="{{asset('assets/js/stisla.js')}}"></script>
   
   <!-- JS Libraies -->
+  {{-- DataTables --}}
+  <script src="{{ asset('assets/datatable/jquery.dataTables.min.js') }}"></script>
+  <script src="{{ asset('assets/datatable/dataTables.bootstrap4.min.js') }}"></script>
+  <script src="{{ asset('assets/datatable/dataTables.responsive.min.js') }}"></script>
+  <script src="{{ asset('assets/datatable/responsive.bootstrap4.min.js') }}"></script>
 
   <!-- Page Specific JS File -->
   
   <!-- Template JS File -->
   <script src="{{asset('assets/js/scripts.js')}}"></script>
   <script src="{{asset('assets/js/custom.js')}}"></script>
+
+  @stack('script')
 </body>
 </html>
