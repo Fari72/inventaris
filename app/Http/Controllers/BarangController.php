@@ -7,6 +7,7 @@ use App\Models\Tempat;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Validator;
+use PDF;
 
 class BarangController extends Controller
 {
@@ -25,7 +26,7 @@ class BarangController extends Controller
         $tempat = Tempat::all();
         $kategori = Kategori::all();
         $kode = 'INV'. '/'. $maxid. '/'. $bulan. '/'. $tahun;
-        return view('barang.index', compact('barang', 'tempat', 'kategori', 'kode'));
+        return view('barang.index', compact( 'tempat', 'kategori', 'kode'));
     }
 
     public function data()
@@ -46,11 +47,11 @@ class BarangController extends Controller
                 <div class="btn-group">
                     <button onclick="editData(`' .route('barang.update', $barang->id). '`)" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button>
                     <button onclick="deleteData(`' .route('barang.destroy', $barang->id). '`)" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                    <button onclick="deleteData(`' .route('barang.destroy', $barang->id). '`)" class="btn btn-success btn-sm"><i class="fa fa-print"></i></button>
+                    <a href="' .route('barang.pdf', $barang->id). '" target="_blank" onclick="(`' .route('barang.pdf', $barang->id). '`)" class="btn btn-success btn-sm"><i class="fa fa-print"></i></a>
                 </div>
                 ';
             })
-            ->rawColumns(['aksi', 'kategori_id', 'tempat_id'])
+            ->rawColumns(['aksi', 'kategori_id', 'tempat_id',])
             ->make(true);
     }
 
@@ -153,5 +154,28 @@ class BarangController extends Controller
         $barang->delete();
 
         return redirect('barang');
+    }
+
+    public function cetakBarcode(request $request)
+    {
+        $databarang = array();
+        foreach ($request->id as $id){
+            $barang = Barang::find($id);
+            $databarang[] = $barang;
+        }
+
+        $no = 1;
+
+        $pdf =  PDF::loadview('barang.pdf', compact('barang'));
+        $pdf->setPaper([0, 0, 289, 13385827, 360], 'landscape');
+        return $pdf->stream('barang.pdf');
+    }
+
+    public function pdf($id)
+    {
+        $barang = Barang::find($id);
+
+        $pdf =  PDF::loadview('barang.pdf', compact('barang'));
+        return $pdf->stream('barang.pdf');
     }
 }

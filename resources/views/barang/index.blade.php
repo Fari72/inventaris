@@ -215,6 +215,10 @@
             $('#modalForm [name=_method]').val('post');
         }
 
+        function pdf(url)
+        {
+            $('.form-barang').attr('action', url).attr('target', '_blank').submit();
+        }
         function editData(url){
             $('#modalForm').modal('show');
             $('#modalForm .modal-title').text('Edit Data Barang');
